@@ -6,9 +6,8 @@ import
   Route,
   Switch,
   Link } from "react-router-dom";
-import DeckList from "../Components/DeckList";
-import DeckCreate from "../Components/DeckCreate";
-import Home from "../Components/Home";
+import DeckCreate from './Deck/DeckCreate'
+import Home from './Home'
 
 function Layout() {
   return (

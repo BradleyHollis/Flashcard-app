@@ -1,4 +1,4 @@
-import DeckList from "./DeckList";
+import DeckList from "./Deck/DeckList";
 import { PlusIcon } from "./Icons";
 import { useHistory } from "react-router-dom";
 
