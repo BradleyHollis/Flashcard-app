@@ -1,8 +1,11 @@
 import '../style.css'
 import { EyeIcon, BookIcon, TrashIcon } from '../Icons'
 import { deleteDeck } from '../../utils/api'
+import { useHistory } from 'react-router-dom'
 
 function DeckView({ deck }){
+
+  const history = useHistory();
 
   const handleDelete = async({ target }) => {  
     const confirm = window.confirm('Delete this deck?\n\nYou will not be able to recover it.')
@@ -28,7 +31,7 @@ function DeckView({ deck }){
                 </div>
               <p>{deck.description}</p>
               <div className='button-grouping'>
-                <button className='btn btn-secondary'><EyeIcon/>{` View`}</button>
+                <button className='btn btn-secondary' onClick={() => history.push(`/decks/${deck.id}`)}><EyeIcon/>{` View`}</button>
                 <button className='btn btn-primary'><BookIcon/>{` Study`}</button>
                 <button className='btn btn-danger' onClick={handleDelete}><TrashIcon/></button>
               </div>

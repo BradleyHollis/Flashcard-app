@@ -7,6 +7,7 @@ import
   Switch,
   Link } from "react-router-dom";
 import DeckCreate from './Deck/DeckCreate'
+import Deck from "./Deck/Deck";
 import Home from './Home'
 
 function Layout() {
@@ -23,6 +24,10 @@ function Layout() {
         <Route path='/decks/new'>
           <DeckCreate/>
         </Route>
+        <Route exact path='/decks/:deckId'>
+          <Deck/>
+        </Route>
+        
         <NotFound />
         </Switch>
       </div>
