@@ -32,7 +32,7 @@ function DeckView({ deck }){
               <p>{deck.description}</p>
               <div className='button-grouping'>
                 <button className='btn btn-secondary' onClick={() => history.push(`/decks/${deck.id}`)}><EyeIcon/>{` View`}</button>
-                <button className='btn btn-primary'><BookIcon/>{` Study`}</button>
+                <button className='btn btn-primary' onClick={() => history.push(`/decks/${deck.id}/study`)}><BookIcon/>{` Study`}</button>
                 <button className='btn btn-danger' onClick={handleDelete}><TrashIcon/></button>
               </div>
             </div>

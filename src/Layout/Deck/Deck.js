@@ -68,7 +68,7 @@ if (deck.id) {
                 </div>     
         )
       } 
-        return "No deck here! Please create a new deck."
+    else    return "No deck here! Please create a new deck."
     }
 
 

@@ -9,6 +9,7 @@ import
 import DeckCreate from './Deck/DeckCreate'
 import Deck from "./Deck/Deck";
 import Home from './Home'
+import StudyDeck from "./Deck/StudyDeck";
 
 function Layout() {
   return (
@@ -26,9 +27,11 @@ function Layout() {
         </Route>
         <Route exact path='/decks/:deckId'>
           <Deck/>
-        </Route>
-        
-        <NotFound />
+        </Route> 
+        <Route path='/decks/:deckId/study'>
+          <StudyDeck/>
+        </Route>     
+        <NotFound/>
         </Switch>
       </div>
     </Router>
