@@ -22,3 +22,19 @@
 .card {
     margin: 7px;
 }
+
+.col input, textarea{
+    width: 100%;
+}
+
+.col label {
+    margin-top: 10px;
+}
+
+.space-top {
+    margin-top: 15px;
+}
+
+.move-right{
+    margin-left: 7px;
+}
