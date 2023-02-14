@@ -7,6 +7,8 @@ import
   Switch,
   Link } from "react-router-dom";
 import DeckList from "../Components/DeckList";
+import DeckCreate from "../Components/DeckCreate";
+import Home from "../Components/Home";
 
 function Layout() {
   return (
@@ -17,7 +19,10 @@ function Layout() {
         {/* TODO: Implement the screen starting here */}
         <Switch>
         <Route exact path='/'>
-          <DeckList/>
+          <Home/>
+        </Route>
+        <Route path='/decks/new'>
+          <DeckCreate/>
         </Route>
         <NotFound />
         </Switch>
