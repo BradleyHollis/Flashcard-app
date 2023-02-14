@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { createDeck } from "../utils/api";
-import './style.css'
+import { createDeck } from "../../utils/api";
+import '../style.css'
 
 function DeckCreate(){
 
@@ -21,9 +21,17 @@ function DeckCreate(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDeck(formData);
-        setFormData({ ...initialFormState })
-        history.push('/');
+        async function addDeck(){
+            try {
+                const toAdd = await createDeck(formData);
+                history.push(`/decks/${toAdd.id}`)
+            } catch (error) {
+                if (error===!"AbortError") {
+                    throw error;
+                }
+            }
+        }
+        addDeck();
     }
 
     const history = useHistory();

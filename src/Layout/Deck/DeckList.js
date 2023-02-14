@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { listDecks } from "../utils/api";
+import { listDecks } from "../../utils/api";
 import DeckView from "./DeckView";
 
 function DeckList(){
