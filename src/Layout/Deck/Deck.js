@@ -39,7 +39,7 @@ if (deck.id) {
                     <div className="col-8">
                         <Link to={`/decks/${deckId}/edit`}>
                             <button className="btn btn-secondary mr-1">
-                                <i class="bi bi-pencil mr-1"></i>
+                                <i className="bi bi-pencil mr-1"></i>
                                 Edit
                             </button>
                         </Link>
