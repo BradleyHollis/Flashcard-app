@@ -1,15 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import CardView from "./CardView";
 import { deleteCard, updateDeck } from "../../utils/api/index";
+import CardView from "./CardView";
 
 function CardsList({ deck }) {
     const { deckId } = useParams();
 
        const handleCardDelete = async ({ target }) => {
+        const value = target.value;
         const confirm = window.confirm("Delete this card?\n\nYou will not be able to recover it.");
             if (confirm) {
-                deleteCard(target.value)
+                deleteCard(value)
                 .then(updateDeck(deckId))
                 .then(window.location.reload());
             }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { createCard, readDeck } from "../../utils/api";
+import CardForm from "./CardForm";
 import BreadCrumb from "../Common/Breadcrumb";
 import "../Common/style.css";
+import { createCard, readDeck } from "../../utils/api";
 
 function CreateCard(){
 
@@ -53,30 +54,11 @@ function CreateCard(){
                 <div className="row">
                     <h2>{deck.name}: Add Card</h2>
                 </div>
-                <div className="row"><label htmlFor="front">Front</label></div>
-                <div className="row">
-                    <textarea 
-                        id="front"
-                        name="front"
-                        placeholder="  Front side of card"
-                        rows="4"
-                        value={formData.front}
-                        onChange={handleChange}
-                        required={true}
-                    />
-                </div>
-                <div className="row"><label htmlFor="back">Back</label></div>
-                <div className="row">
-                    <textarea
-                        id="back"
-                        name="back"
-                        placeholder="   Back side of card"
-                        rows="4"
-                        value={formData.back}
-                        onChange={handleChange}
-                        required={true}
-                    />
-                </div>
+                <CardForm 
+                    formData={formData} 
+                    handleChange={handleChange} 
+                    handleSubmit={handleSubmit}
+                />
                 <div className="row space-top">
                 <button type="submit" className="btn btn-secondary" onClick={() => history.push(`/decks/${deckId}`)}>Done</button>
                 <button type='submit' className="btn btn-primary space-between" onClick={handleSubmit}>Save</button>

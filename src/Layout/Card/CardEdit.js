@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { readCard, readDeck, updateCard } from "../../utils/api";
+import CardForm from "./CardForm";
 import BreadCrumb from "../Common/Breadcrumb";
+import { readCard, readDeck, updateCard } from "../../utils/api";
+
 function CardEdit(){
 
     const { deckId, cardId } = useParams();
@@ -47,30 +49,11 @@ function CardEdit(){
                     <div className="row">
                         <h2>{deck.name}: Edit Card</h2>
                     </div>
-                    <div className="row"><label htmlFor="front">Front</label></div>
-                    <div className="row">
-                        <textarea 
-                            id="front"
-                            name="front"
-                            placeholder="  Front side of card"
-                            rows="4"
-                            value={card.front}
-                            onChange={handleChange}
-                            required={true}
-                        />
-                    </div>
-                    <div className="row"><label htmlFor="back">Back</label></div>
-                    <div className="row">
-                        <textarea
-                            id="back"
-                            name="back"
-                            placeholder="   Back side of card"
-                            rows="4"
-                            value={card.back}
-                            onChange={handleChange}
-                            required={true}
-                        />
-                    </div>
+                    <CardForm 
+                      formData={card} 
+                      handleChange={handleChange} 
+                      handleSubmit={handleSubmit}
+                    />
                     <div className="row space-top">
                     <button type="submit" className="btn btn-secondary" onClick={() => history.push(`/decks/${deckId}`)}>Cancel</button>
                     <button type='submit' className="btn btn-primary space-between" onClick={handleSubmit}>Save</button>
