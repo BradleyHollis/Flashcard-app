@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import 
 { BrowserRouter as Router, 
   Route,
-  Switch,
-  Link } from "react-router-dom";
+  Switch
+} from "react-router-dom";
 import DeckCreate from './Deck/DeckCreate'
 import Deck from "./Deck/Deck";
 import Home from './Common/Home'
@@ -13,16 +13,37 @@ import StudyDeck from "./Deck/StudyDeck";
 import CreateCard from "./Card/CreateCard";
 import DeckEdit from "./Deck/DeckEdit";
 import CardEdit from "./Card/CardEdit";
-import StudyCard from "./Card/StudyCard";
+import { listDecks } from "../utils/api";
 
 function Layout() {
+
+  const [decks, setDecks] = useState([]);
+
+  useEffect(() => {
+      setDecks([]);
+      const abortController = new AbortController();
+
+      async function loadDecks() {
+        try {
+          const loadedDecks = await listDecks();
+          setDecks(() => loadedDecks);
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            throw error;
+          }
+        }
+      }
+      loadDecks();
+      return() => abortController.abort();
+    }, []);
+
   return (
     <div>
     <Header />
       <div className="container">
       <Switch>
         <Route exact path='/'>
-          <Home/>
+          <Home decks={decks}/>
         </Route>
         <Route path='/decks/new'>
           <DeckCreate/>
