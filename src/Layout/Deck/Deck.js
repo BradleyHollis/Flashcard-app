@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
-import { readDeck, deleteDeck } from "../../utils/api/index";
 import CardList from "../Card/CardList";
 import BreadCrumb from '../Common/Breadcrumb';
-import { TrashIcon } from "../Icons";
+import { TrashIcon } from "../Common/Icons";
+import { readDeck, deleteDeck } from "../../utils/api/index";
 
 function Deck() {
     const { deckId } = useParams();

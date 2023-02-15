@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../../utils/api";
 import BreadCrumb from "../Common/Breadcrumb";
-import '../style.css';
+import "../Common/style.css";
+
 function CreateCard(){
 
     const { deckId } = useParams();

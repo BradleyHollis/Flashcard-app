@@ -5,9 +5,9 @@ import BreadCrumb from "../Common/Breadcrumb";
 import StudyCard from '../Card/StudyCard';
 
 function StudyDeck(){
-
-    const [deck, setDeck] = useState({});
+    
     const { deckId } = useParams();
+    const [deck, setDeck] = useState({});
 
     useEffect(() => {
         async function loadDeck(){
@@ -20,17 +20,17 @@ function StudyDeck(){
     if (Object.keys(deck).length) {
         return (
         <>
-        <BreadCrumb path={`/decks/${deckId}`} pathName={deck.name} currentPage={"Study"} />
-        <div className="col">
-            <div className="row">
-                <h2>Study: {deck.name}</h2>
+            <BreadCrumb path={`/decks/${deckId}`} pathName={deck.name} currentPage={"Study"} />
+            <div className="col">
+                <div className="row">
+                    <h2>Study: {deck.name}</h2>
+                </div>
+                <div className="row">
+                    <StudyCard cards={deck.cards}/> 
+                </div>
             </div>
-            <div className="row">
-                <StudyCard cards={deck.cards}/> 
-            </div>
-        </div>
         </>
-      )
+        );
     }
 
     return "Loading deck here..."

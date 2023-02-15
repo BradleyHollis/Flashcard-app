@@ -2,12 +2,13 @@ import React, {useState} from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 
 function StudyCard({ cards }){
-
+    
     const { deckId } = useParams();
-    const history = useHistory();
 
     const [side, setSide] = useState(true);
     const [index, setIndex] = useState(0);
+
+    const history = useHistory();
  
     const handleNext = () => {
         if(index < cards.length -1){
