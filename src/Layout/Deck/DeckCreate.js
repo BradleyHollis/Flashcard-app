@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { createDeck } from "../../utils/api";
+import BreadCrumb from '../Common/Breadcrumb';
 import '../style.css'
 
 function DeckCreate(){
@@ -38,13 +39,8 @@ function DeckCreate(){
 
     return (
         <>
-        <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-                <li className="breadcrumb-item"><Link to='/'>Home</Link></li>
-                <li className="breadcrumb-item active" aria-current="page">Library</li>
-            </ol>
-        </nav>
-
+        <BreadCrumb currentPage="Library"/>
+        <h2>Create Deck</h2>
          <form onSubmit={handleSubmit}>
             <div className="col">
                 <div className="row"><label htmlFor="name">Name</label></div>

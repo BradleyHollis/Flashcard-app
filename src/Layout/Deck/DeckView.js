@@ -14,8 +14,7 @@ function DeckView({ deck }){
       window.location.reload();
     }
   }
-  
-  if(deck.id){
+
     return (
       <>
         <div className="card" key={deck.id}>
@@ -40,7 +39,6 @@ function DeckView({ deck }){
         </div>
     </>
     )
-  }
 }
 
 export default DeckView

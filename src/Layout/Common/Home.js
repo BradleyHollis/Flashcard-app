@@ -1,5 +1,6 @@
-import DeckList from "./Deck/DeckList";
-import { PlusIcon } from "./Icons";
+import React from 'react'
+import DeckList from '../Deck/DeckList'
+import { PlusIcon } from '../Icons';
 import { useHistory } from "react-router-dom";
 
 function Home(){

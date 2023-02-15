@@ -8,20 +8,19 @@ import
   Link } from "react-router-dom";
 import DeckCreate from './Deck/DeckCreate'
 import Deck from "./Deck/Deck";
-import Home from './Home'
+import Home from './Common/Home'
 import StudyDeck from "./Deck/StudyDeck";
 import CreateCard from "./Card/CreateCard";
 import DeckEdit from "./Deck/DeckEdit";
 import CardEdit from "./Card/CardEdit";
+import StudyCard from "./Card/StudyCard";
 
 function Layout() {
   return (
-    <>
-    <Router>
+    <div>
     <Header />
       <div className="container">
-        {/* TODO: Implement the screen starting here */}
-        <Switch>
+      <Switch>
         <Route exact path='/'>
           <Home/>
         </Route>
@@ -31,9 +30,6 @@ function Layout() {
         <Route path='/decks/:deckId/cards/:cardId/edit'>
           <CardEdit/>
         </Route>
-        <Route exact path='/decks/:deckId'>
-          <Deck/>
-        </Route> 
         <Route path='/decks/:deckId/cards/new'>
           <CreateCard/>
         </Route>
@@ -42,12 +38,14 @@ function Layout() {
         </Route>
         <Route path='/decks/:deckId/study'>
           <StudyDeck/>
-        </Route>     
+        </Route>
+        <Route exact path='/decks/:deckId'>
+          <Deck/>
+        </Route>      
         <NotFound/>
         </Switch>
       </div>
-    </Router>
-    </>
+    </div>
   );
 }
 
