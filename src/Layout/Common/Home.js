@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import DeckList from "../Deck/DeckList";
 import { PlusIcon } from "../Common/Icons";
 
-function Home(){
+function Home({ decks }){
     
     const history = useHistory();
 
@@ -15,7 +15,7 @@ function Home(){
             </button>
         </div>
             <div>
-                <DeckList/>
+                <DeckList decks={decks}/>
             </div>
         </div>
     )
