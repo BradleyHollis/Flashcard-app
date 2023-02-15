@@ -31,7 +31,7 @@ function CreateCard(){
             setFormData({ ...initialFormState });
             console.log(formData)
         } catch (error){
-            if(error.name === 'AbortError'){
+            if(error.name !== 'AbortError'){
                 throw error;
             }
         }
