@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { deleteCard, updateDeck } from "../../utils/api/index";
+import { useParams } from "react-router-dom";
 import CardView from "./CardView";
+import { deleteCard, updateDeck } from "../../utils/api/index";
 
 function CardsList({ deck }) {
     const { deckId } = useParams();

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { createDeck } from "../../utils/api";
-import BreadCrumb from '../Common/Breadcrumb';
-import '../style.css'
+import BreadCrumb from "../Common/Breadcrumb";
+import "../Common/style.css";
 
 function DeckCreate(){
 
