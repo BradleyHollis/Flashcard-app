@@ -14,19 +14,19 @@ function CardsList({ deck }) {
                 .then(window.location.reload());
             }
         }
-
+        
         return (
         <div className="container">
           <h2>Cards</h2>
-            <div className="card-list">
                 {deck.cards.map((card, index) => (
+                <div className="card-list" key={index}>
                     <CardView 
                         card={card} 
                         handleCardDelete={handleCardDelete} 
                         deckId={deckId}
                     />
+                </div>
                 ))}
-            </div>
             </div>
         )
     };

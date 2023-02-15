@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "name": "BodyBuilding",
-      "description": "Introduction to weightlifting",
+      "name": "Human History",
+      "description": "An intro the history of the human race.",
       "id": 3
     }
   ],
@@ -46,24 +46,6 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
-    },
-    {
-      "front": "What is the best fruit to add to a protein shake?",
-      "back": "Bananas",
-      "deckId": 3,
-      "id": 6
-    },
-    {
-      "front": "What is the best workout to do in the morning?",
-      "back": "Taking a ride on your bike",
-      "deckId": 3,
-      "id": 7
-    },
-    {
-      "front": "How old is Donald Trump?",
-      "back": "Hasn't aged a bit, hard to tell",
-      "deckId": 3,
-      "id": 8
     }
   ]
 }

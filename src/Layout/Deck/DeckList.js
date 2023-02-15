@@ -13,7 +13,7 @@ function DeckList(){
         async function loadDecks() {
           try {
             const loadedDecks = await listDecks();
-            setDecks(loadedDecks);
+            setDecks(() => loadedDecks);
           } catch (error) {
             if (error.name !== "AbortError") {
               throw error;
@@ -23,14 +23,16 @@ function DeckList(){
         loadDecks();
         return() => abortController.abort();
       }, []);
-
-    return (
-    <>
-        {decks.map((deck) => (
-           <DeckView deck={deck} key={deck.id}/>
-        ))}
-    </>
-    )
+    
+      if(Object.entries(decks.length)){
+        return (
+        <>
+            {decks.map((deck) => (
+              <DeckView deck={deck} key={deck.id}/>
+            ))}
+        </>
+      )
+  }
 }
 
 export default DeckList

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { readDeck } from "../../utils/api";
 import BreadCrumb from "../Common/Breadcrumb";
-import StudyCard from "./StudyCard";
+import StudyCard from '../Card/StudyCard';
 
 function StudyDeck(){
 
@@ -16,9 +16,7 @@ function StudyDeck(){
         }
         loadDeck();
     }, [deckId]);
-
-    console.log(Object.keys(deck).length)
-
+    
     if (Object.keys(deck).length) {
         return (
         <>
@@ -34,7 +32,7 @@ function StudyDeck(){
         </>
       )
     }
-   
+
     return "Loading deck here..."
 }
 

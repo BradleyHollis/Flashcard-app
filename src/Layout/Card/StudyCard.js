@@ -41,8 +41,13 @@ function StudyCard({ cards }){
                         : cards[index].back
                         }                      
                     </p>
+                    
                     <button className="btn btn-secondary mr-1" onClick={handleFlip}>Flip</button>
+                    {!side ? 
                     <button className="btn btn-primary" onClick={handleNext}>Next</button>
+                    : 
+                    ''
+                    }
                 </div>
             </div>
             </div>
