@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TrashIcon } from "../Common/Icons"
+import { TrashIcon } from "../Common/Icons";
 
 function CardView({ card, deckId, handleCardDelete }){
     return (
