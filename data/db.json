@@ -55,13 +55,13 @@
     },
     {
       "front": "What is the best workout to do in the morning?",
-      "back": "Walking",
+      "back": "Taking a ride on your bike",
       "deckId": 3,
       "id": 7
     },
     {
-      "front": "How old is Arnold Schwarzeneger?",
-      "back": "old enough",
+      "front": "How old is Donald Trump?",
+      "back": "Hasn't aged a bit, hard to tell",
       "deckId": 3,
       "id": 8
     }
