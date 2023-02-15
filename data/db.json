@@ -12,7 +12,7 @@
     },
     {
       "name": "BodyBuilding",
-      "description": "Introduction to bodybuilding",
+      "description": "Introduction to weightlifting",
       "id": 3
     }
   ],
@@ -46,6 +46,24 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
+    },
+    {
+      "front": "What is the best fruit to add to a protein shake?",
+      "back": "Bananas",
+      "deckId": 3,
+      "id": 6
+    },
+    {
+      "front": "What is the best workout to do in the morning?",
+      "back": "Walking",
+      "deckId": 3,
+      "id": 7
+    },
+    {
+      "front": "How old is Arnold Schwarzeneger?",
+      "back": "old enough",
+      "deckId": 3,
+      "id": 8
     }
   ]
 }
