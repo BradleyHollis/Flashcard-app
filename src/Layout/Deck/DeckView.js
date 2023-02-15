@@ -15,6 +15,7 @@ function DeckView({ deck }){
     }
   }
   
+  if(deck.id){
     return (
       <>
         <div className="card" key={deck.id}>
@@ -25,7 +26,7 @@ function DeckView({ deck }){
                   </div>
                   <div className="col">
                    <div className='text-right small-font grey-font'>
-                    <i class="fas fa-pen">{deck.cards.length} cards</i>
+                    <i className="fas fa-pen">{deck.cards.length} cards</i>
                   </div>
                   </div>
                 </div>
@@ -39,6 +40,7 @@ function DeckView({ deck }){
         </div>
     </>
     )
+  }
 }
 
 export default DeckView

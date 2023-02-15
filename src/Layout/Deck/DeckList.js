@@ -7,9 +7,22 @@ function DeckList(){
     const [decks, setDecks] = useState([]);
 
     useEffect(() => {
-        listDecks().then((response) => setDecks(response))
-        .catch((error) => console.log(error))
-    },[])
+        setDecks([]);
+        const abortController = new AbortController();
+
+        async function loadDecks() {
+          try {
+            const loadedDecks = await listDecks();
+            setDecks(loadedDecks);
+          } catch (error) {
+            if (error.name !== "AbortError") {
+              throw error;
+            }
+          }
+        }
+        loadDecks();
+        return() => abortController.abort();
+      }, []);
 
     return (
     <>
